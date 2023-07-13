@@ -3,5 +3,11 @@ const nameOutput = document.querySelector("#name-output");
 
 nameInput.addEventListener("input", onInputChange);
 function onInputChange(event) {
-  nameOutput.textContent = event.currentTarget.value;
+  const inputText = event.currentTarget.value;
+
+  if (inputText === "") {
+    nameOutput.textContent = "Anonymous";
+  } else {
+    nameOutput.textContent = inputText;
+  }
 }
